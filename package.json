@@ -6,10 +6,10 @@
     "build": "yarn clear && yarn compile",
     "clear": "rimraf dist",
     "compile": "webpack && cp -R @types dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "execute": "ts-node -r tsconfig-paths/register",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "postpublish": "yarn clear && git push",
     "prepublish": "yarn build",
-    "execute": "ts-node -r tsconfig-paths/register",
     "start": "yarn execute ./src"
   },
   "husky": {
@@ -20,7 +20,10 @@
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
   },
-  "repository": "git@github.com:sura0111/tsNodeProject.git",
+  "repository": {
+    "url": "https://github.com/sura0111/typescript-node-base.git",
+    "type": "git"
+  },
   "author": "sura0111 <sura0111@gmail.com>",
   "license": "MIT",
   "devDependencies": {
